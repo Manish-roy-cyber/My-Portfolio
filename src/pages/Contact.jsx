@@ -4,7 +4,7 @@ import bgImage from "../assets/bg.png";
 const Contact = () => {
   return (
     <section
-      className="min-h-screen flex items-center justify-center text-white relative px-9"
+      className="min-h-screen flex items-center justify-between text-white relative px-9"
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",
