@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-import navLinks from "../constants/data";
+import { NavLink } from "react-router-dom";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 
 function Navbar() {
@@ -20,7 +19,7 @@ function Navbar() {
           <h1 className="text-2xl font-bold">Manish Kumar Ray</h1>
         </NavLink>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Button */}
         <button className="md:hidden" onClick={() => setOpen(!open)}>
           {open ? <HiOutlineX size={28} /> : <HiOutlineMenu size={28} />}
         </button>
@@ -30,11 +29,33 @@ function Navbar() {
           className={`absolute md:static bg-black left-0 w-full md:w-auto md:flex md:space-x-6 font-semibold 
           ${open ? "top-16 block text-center py-4" : "hidden md:flex"}`}
         >
-          {navLinks.map((link, index) => (
-            <li key={index} className="py-2 md:py-0 hover:text-yellow-300 transition">
-              <Link to={link.path}>{link.name}</Link>
-            </li>
-          ))}
+          <li className="py-2 md:py-0">
+            <NavLink 
+              to="/about" 
+              className={({ isActive }) => isActive ? "text-yellow-300 font-bold" : "hover:text-yellow-300"}
+              onClick={() => setOpen(false)}
+            >
+              About
+            </NavLink>
+          </li>
+          <li className="py-2 md:py-0">
+            <NavLink 
+              to="/projects" 
+              className={({ isActive }) => isActive ? "text-yellow-300 font-bold" : "hover:text-yellow-300"}
+              onClick={() => setOpen(false)}
+            >
+              Projects
+            </NavLink>
+          </li>
+          <li className="py-2 md:py-0">
+            <NavLink 
+              to="/contact" 
+              className={({ isActive }) => isActive ? "text-yellow-300 font-bold" : "hover:text-yellow-300"}
+              onClick={() => setOpen(false)}
+            >
+              Contact
+            </NavLink>
+          </li>
         </ul>
 
       </div>

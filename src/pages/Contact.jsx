@@ -25,7 +25,7 @@ const Contact = () => {
 
           <ul className="space-y-4 text-gray-200">
             <li>👤 <strong>Name:</strong> Manish Kumar Ray</li>
-            <li>📧 <strong>Email:</strong> maniosh111don@gmail.com</li>
+            <li>📧 <strong>Email:</strong> manish111don@gmail.com</li>
             <li>📱 <strong>Mobile:</strong> +977-9812103000</li>
             <li>📍 <strong>Address:</strong> Nepal</li>
           </ul>

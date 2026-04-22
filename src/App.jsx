@@ -6,17 +6,15 @@ import Project from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Scroller from "./components/Scroller";
-// import Slider from "./components/Slider"
 
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
 
       <Navbar />
+
+      {/* Scroller MUST be inside router (you already did correctly) */}
       <Scroller />
-      {/* <Slider /> */}
-
-
 
       <div className="flex-1">
         <Routes>
@@ -28,6 +26,7 @@ function App() {
       </div>
 
       <Footer />
+
     </div>
   );
 }
