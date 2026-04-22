@@ -30,6 +30,15 @@ function Navbar() {
           ${open ? "top-16 block text-center py-4" : "hidden md:flex"}`}
         >
           <li className="py-2 md:py-0">
+             <NavLink 
+              to="/" 
+              className={({ isActive }) => isActive ? "text-yellow-300 font-bold" : "hover:text-yellow-300"}
+              onClick={() => setOpen(false)}
+            >
+              Home
+            </NavLink>
+          </li>
+          <li className="py-2 md:py-0">
             <NavLink 
               to="/about" 
               className={({ isActive }) => isActive ? "text-yellow-300 font-bold" : "hover:text-yellow-300"}

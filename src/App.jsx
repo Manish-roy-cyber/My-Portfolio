@@ -10,15 +10,33 @@ import Scroller from "./components/Scroller";
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
-
       <Navbar />
-
-      {/* Scroller MUST be inside router (you already did correctly) */}
-      <Scroller />
+      <Scroller /> {/* resets scroll on route change */}
 
       <div className="flex-1">
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/* Home route: stacked sections */}
+          <Route
+            path="/"
+            element={
+              <div className="overflow-y-auto">
+                <section className="min-h-screen">
+                  <Home />
+                </section>
+                <section className="min-h-screen">
+                  <About />
+                </section>
+                <section className="min-h-screen">
+                  <Project />
+                </section>
+                <section className="min-h-screen">
+                  <Contact />
+                </section>
+              </div>
+            }
+          />
+
+          {/* Other routes: standalone pages */}
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Project />} />
           <Route path="/contact" element={<Contact />} />
@@ -26,7 +44,6 @@ function App() {
       </div>
 
       <Footer />
-
     </div>
   );
 }
